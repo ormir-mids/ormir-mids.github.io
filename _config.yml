@@ -11,4 +11,4 @@ plugins:
 - github-pages
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
-repository: muscle-bids/muscle-bids.github.io
+repository: muscle-bids/muscle-bids
