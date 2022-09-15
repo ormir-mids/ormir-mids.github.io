@@ -1,6 +1,6 @@
 ---
 title: The Muscle-BIDS Project
-description: Standardizing the file format for Muscle MR processing
+description: Standardizing Muscle MR image processing
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-github-metadata
@@ -12,3 +12,11 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 repository: muscle-bids/muscle-bids
+
+sections:
+- label: Home
+  url: /
+- label: Specification
+  url: /specs
+- label: Python package
+  url: /package

@@ -1,0 +1,24 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+div#nav_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+div.nav_item {
+    border-style: solid !important;
+    border: 3px #fff;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+div.nav_item a {
+    font-weight: bold;
+    color: #156c84 !important
+}
