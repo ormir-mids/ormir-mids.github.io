@@ -28,7 +28,7 @@ The Muscle-BIDS draft was based on the [neuroimaging BIDS specification](https:/
 * Dimitrios Karampinos and Sarah Schlaeger (Technical University Munich, Germany)
 * Arjun Desai (Stanford University, USA)
 
-Additionally, the muscle-bids python [package](https://pypi.org/project/muscle-bids/) is developed by:
+Additionally, the muscle-bids python [package](/package) is developed by:
 
 * Francesco Santini
 * Donnie Cameron
@@ -38,3 +38,14 @@ Additionally, the muscle-bids python [package](https://pypi.org/project/muscle-b
 
 # The specification
 
+Muscle-BIDS prescribes that all imaging data should be kept in a NIfTI format inside a predefined directory structure, with a specific file naming scheme. Associated to each NIfTI file, there are up to three JSON files containing:
+
+1. The relevant parameters for that specific acquisition (e.g. echo times for multi echo spin echo).
+2. The patient information (which can be omitted for anonymization).
+3. All extra headers needed for the conversion to DICOM (originating from the initial acquisition).
+
+Each acquisition type has a corresponding set of relevant parameters and a naming convention. The full specification is found [here](/specs).
+
+# The python package
+
+A work-in-progress python package is delivered to implement the conversion between DICOM and Muscle-BIDS, and the I/O of Muscle-BIDS-compatible files from python programs. More information is found [here](/package).
