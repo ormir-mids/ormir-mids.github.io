@@ -9,13 +9,13 @@ Muscle-BIDS refer to two things:
 * a standard specification for the processing of MR images of the human skeletal muscle, and
 * a python package providing conversion and I/O functionalities for DICOM and muscle-BIDS data
 
-The aim of this standard is to provide a common interface for data postprocessing and analysis tools to read and write data in an interoperable way. The existing DICOM standard has very borad guidelines that result in a large variability among vendors of medical devices, to the point that it can hardly be considered a "standard" at all.
+The aim of this standard is to provide a common interface for data postprocessing and analysis tools to read and write data in an interoperable way. The existing DICOM standard has very broad guidelines that result in a large variability among vendors of medical devices, to the point that it can hardly be considered a "standard" at all.
 
 The muscle-BIDS standard is inspired by the [neuroimaging BIDS specification](https://bids.neuroimaging.io/), and it is mostly compatible with it, in the sense that it aims to subdivide and group the acquired images based on their diagnostic role: e.g. anatomical images, quantitative maps, functional images, etc.
 
 The images are stored as three- or four-dimensional [NIfTI](https://nifti.nimh.nih.gov/) datasets paired with three plain-text [JSON](https://www.json.org/) headers each. These images are stored in a predefined directory and naming structure that allows immediate identification of the role of each dataset.
 
-As integration with medical and PACS systems is a prerequisites for our standard, bidirectional convertion between DICOM and muscle-BIDS is ensured.
+As integration with medical and PACS systems is a prerequisites for our standard, bidirectional conversion between DICOM and muscle-BIDS is ensured.
 
 # Who we are
 The Muscle-BIDS draft was based on the [neuroimaging BIDS specification](https://bids.neuroimaging.io/) by the following consortium of MR researchers:
