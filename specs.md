@@ -46,10 +46,43 @@ Where the `patient_folder` is the location of the root folder containing all the
 
 ||NIfTI structure|Filename suffix|Folder|JSON required fields|
 |---|---|---|---|---|
-|**Multi-echo gradient echo**|**4D (x,y,z,echo)**|**megre**|**anat**|<ul> <li>**EchoTime** (array) in ms</li><li>**WaterFatShift** in pixels</li<li>**MagneticFieldStrength**</li><li>*[proposed]* **ReadoutMode**: Monopolar/Bipolar</li><li>*[proposed]* **PrecessionDirection**: Counter-/Clockwise</li> </ul>
+|**Multi-echo gradient echo**|**4D (x,y,z,echo)**|**megre**|**anat**|<ul> <li>**EchoTime** (array) in ms</li><li>**WaterFatShift** in pixels</li><li>**MagneticFieldStrength**</li><li>*[proposed]* **ReadoutMode**: Monopolar/Bipolar</li><li>*[proposed]* **PrecessionDirection**: Counter-/Clockwise</li> </ul>
 |**Multi-echo spin echo**|**4D (x,y,z,echo)**|**mese**|**anat**|<ul><li>**EchoTime** (array) in ms</li><li>**RefocusingFlipAngle** in degrees</li><li>*[optional]* **ExcitationProfile** and **RefocusingProfile** (arrays) providing the slice profiles in degrees</li></ul>
 |**T1w / T1w-FS / T2w / T2w-FS**|**3D (x,y,z)**|**t1w / t1w-fs / t2w / t2w-fs**|**anat**||
 |**Quantitative T1 / T2 / wT2**|**3D (x,y,z)**|**t1 / t2 / wt2**|**quant**||
+
+
+<br>
+<br>
+
+**TESTING RENDERING ON GITHUB PAGES**
+
+<table border="1">
+    <tr>
+        <th>MR sequence</th>
+        <th>NIfTI structure</th>
+        <th>Filename suffix</th>
+        <th>Folder</th>
+        <th>JSON required fields</th>
+    </tr>
+    <tr>
+        <td>Multi-echo gradient echo</td>
+        <td>4D (x,y,z,echo)</td>
+        <td>megre</td>
+        <td>anat</td>
+        <td>
+            <ul> 
+                <li>EchoTime (array) in ms</li>	
+                <li>WaterFatShift in pixels</li>
+                <li>MagneticFieldStrength**</li>
+                <li><i>[proposed]</i><b>ReadoutMode</b>: Monopolar/Bipolar</li>
+                <li>[proposed]PrecessionDirection: Counter-/Clockwise</li> 
+            </ul>
+        </td>
+    </tr>
+    
+</table>
+
 
 
 <!--
