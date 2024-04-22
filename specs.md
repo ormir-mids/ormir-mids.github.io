@@ -43,120 +43,120 @@ Where the `patient_folder` is the location of the root folder containing all the
 
 ## Implemented or partially implemented
 
-
-||NIfTI structure|Filename suffix|Folder|JSON required fields|
-|---|---|---|---|---|
-|**Multi-echo gradient echo**|**4D (x,y,z,echo)**|**megre**|**anat**|<ul> <li>**EchoTime** (array) in ms</li><li>**WaterFatShift** in pixels</li><li>**MagneticFieldStrength**</li><li>*[proposed]* **ReadoutMode**: Monopolar/Bipolar</li><li>*[proposed]* **PrecessionDirection**: Counter-/Clockwise</li> </ul>
-|**Multi-echo spin echo**|**4D (x,y,z,echo)**|**mese**|**anat**|<ul><li>**EchoTime** (array) in ms</li><li>**RefocusingFlipAngle** in degrees</li><li>*[optional]* **ExcitationProfile** and **RefocusingProfile** (arrays) providing the slice profiles in degrees</li></ul>
-|**T1w / T1w-FS / T2w / T2w-FS**|**3D (x,y,z)**|**t1w / t1w-fs / t2w / t2w-fs**|**anat**||
-|**Quantitative T1 / T2 / wT2**|**3D (x,y,z)**|**t1 / t2 / wt2**|**quant**||
-
-
-<br>
-<br>
-
-**TESTING RENDERING ON GITHUB PAGES**
-
-<table border="1">
+<table>
     <tr>
-        <th>MR sequence</th>
-        <th>NIfTI structure</th>
-        <th>Filename suffix</th>
-        <th>Folder</th>
-        <th>JSON required fields</th>
+        <th><b>MR sequence</b></th>
+        <th><b>NIfTI structure</b></th>
+        <th><b>Filename suffix</b></th>
+        <th><b>Folder</b></th>
+        <th><b>JSON required fields</b></th>
     </tr>
     <tr>
-        <td>Multi-echo gradient echo</td>
-        <td>4D (x,y,z,echo)</td>
-        <td>megre</td>
-        <td>anat</td>
+        <td><b>Multi-echo gradient echo</b></td>
+        <td><b>4D (x,y,z,echo)</b></td>
+        <td><b>megre</b></td>
+        <td><b>anat</b></td>
         <td>
             <ul> 
-                <li>EchoTime (array) in ms</li>	
-                <li>WaterFatShift in pixels</li>
-                <li>MagneticFieldStrength**</li>
-                <li><i>[proposed]</i><b>ReadoutMode</b>: Monopolar/Bipolar</li>
-                <li>[proposed]PrecessionDirection: Counter-/Clockwise</li> 
+                <li><b>EchoTime</b> (array) in ms</li>	
+                <li><b>WaterFatShift</b> in pixels</li>
+                <li><b>MagneticFieldStrength</b></li>
+                <li><i>[proposed]</i> <b>ReadoutMode</b>: Monopolar/Bipolar</li>
+                <li><i>[proposed]</i> <b>PrecessionDirection</b>: Counter-/Clockwise</li> 
             </ul>
         </td>
     </tr>
-    
+    <tr>
+        <td><b>Multi-echo spin echo</b></td>
+        <td><b>4D (x,y,z,echo)</b></td>
+        <td><b>mese</b></td>
+        <td><b>anat</b></td>
+        <td>
+            <ul> 
+                <li><b>EchoTime</b> (array) in ms</li>	
+                <li><b>RefocusingFlipAngle</b> in degrees</li>
+                <li><i>[optional]</i> <b>ExcitationProfile</b> and <b>RefocusingProfile</b>(arrays) providing the slice profiles in degrees</li> 
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><b>T1w / T1w-FS / T2w / T2w-FS</b></td>
+        <td><b>3D (x,y,z)</b></td>
+        <td><b>t1w / t1w-fs / t2w / t2w-fs</b></td>
+        <td><b>anat</b></td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Quantitative T1 / T2 / wT2</b></td>
+        <td><b>3D (x,y,z)</b></td>
+        <td><b>t1 / t2 / wt2</b></td>
+        <td><b>quant</b></td>
+        <td>
+        </td>
+    </tr>
 </table>
 
 
 
-<!--
 
-### Multi-echo gradient echo
-* NIfTI structure: **4D (x,y,z,echo)**
-* Filename suffix: **megre**
-* Folder: **anat**
-* JSON required fields:
-    * **EchoTime** (array) in ms
-    * **WaterFatShift** in pixels
-    * **MagneticFieldStrength**
-    * *[proposed]* **ReadoutMode**: Monopolar/Bipolar
-    * *[proposed]* **PrecessionDirection**: Counter-/Clockwise
-
-### Multi-echo spin echo
-
-* NIfTI structure: **4D (x,y,z,echo)**
-* Filename suffix: **mese**
-* Folder: **anat**
-* JSON required fields:
-    * **EchoTime** (array) in ms
-    * **RefocusingFlipAngle** in degrees
-    * *[optional]* **ExcitationProfile** and **RefocusingProfile** (arrays) providing the slice profiles in degrees.
-
-### T1w / T1w-FS / T2w / T2w-FS
-
-* NIfTI structure: **3D (x,y,z)**
-* Filename suffix: **t1w / t1w-fs / t2w / t2w-fs**
-* Folder: **anat**
-
-### Quantitative T1 / T2 / wT2
-
-* NIfTI structure: **3D (x,y,z)**
-* Filename suffix: **t1 / t2 / wt2**
-* Folder: **quant**
--->
 
 ## Not implemented / Proposed
-||NIfTI structure|Filename suffix|Folder|JSON required fields|
-|---|---|---|---|---|
-|**Phase contrast**|**4D (x,y,z,t) + multiple suffixes for venc direction**|**pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3**|**flow** ?? The velocity information is stored as phase data scaled between -π and +π|<ul><li>**Venc** in cm/s</li><li>**EncodingDirection** (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume. **TBD**: patient coordinate system or image coordinate system.</li></ul>|
-|**Diffusion**|**4D (x,y,z,direction)**|**diff**|**diff**|<ul><li>**MixingTime** in ms</li><li>**EncodingDirection** (array of 3D vectors). The norm of the vector is the **b-value**. The normalized vector indicates the **direction** of the diffusion gradient in patient coordinates.</li></ul>|
-|**Segmentation labels**|<ul><li>**3D (x,y,z)** with integer values, from 0 to N, each value corresponding to a different label</li><li>**4D (x,y,z,label)** stack of binary (0/1) values, each dimension corresponding to a label</li><ul>|**seg** ??|**seg** ??|<ul><li>**Labels** (array of strings). List of the labels represented in the masks. The first value in the list corresponds to either a gray level of 0 or to the 1st volume in the fourth dimension. E.g. `["Background", "SOL", "VM", "VL"]`</li></li>**Note**: the string representation of the labels must follow a standardized format. While it is possible that the same anatomical structure is represented by different labels (e.g. `SOL` or `Soleus`), the labels must be known. This allows flexibility in the implementation of segmentation tools, while keeping easy interoperability because all values are easily convertible. A list of standardized labels is visible [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vS4gioDvbO_6VItFglPEWeXP0U86tfG1yYifTU-XXqk5kdN1vln6KVP6bzDNPw-_L8xvkZ0soQeyW8-/pubhtml#). Please contact [Francesco Santini](mailto:francesco.santini@unibas.ch) if you would like to add your own definitions.</li></ul>|
+
+<table>
+    <tr>
+        <th><b>MR sequence</b></th>
+        <th><b>NIfTI structure</b></th>
+        <th><b>Filename suffix</b></th>
+        <th><b>Folder</b></th>
+        <th><b>JSON required fields</b></th>
+    </tr>
+    <tr>
+        <td><b>Phase contrast</b></td>
+        <td><b>4D (x,y,z,t) + multiple suffixes for venc direction</b></td>
+        <td><b>pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3</b></td>
+        <td><b>flow</b>?? The velocity information is stored as phase data scaled between -π and +π</td>
+        <td>
+            <ul> 
+                <li><b>Venc</b> in cm/s</li>	
+                <li><b>EncodingDirection</b> (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume <b>TBD</b>: patient coordinate system or image coordinate system</li> 
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Diffusion</b></td>
+        <td><b>4D (x,y,z,direction)</b></td>
+        <td><b>diff</b></td>
+        <td><b>diff</b></td>
+        <td>
+            <ul> 
+                <li><b>MixingTime</b> in ms</li>	
+                <li><b>EncodingDirection</b> (array of 3D vectors). The norm of the vector is the <b>b-value</b>. The normalized vector indicates the <b>direction</b> of the diffusion gradient in patient coordinates</li> 
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Segmentation labels</b></td>
+        <td>
+            <ul>
+                <li><b>3D (x,y,z)</b> with integer values, from 0 to N, each value corresponding to a different label</li>
+                <li><b>4D (x,y,z,label)</b> stack of binary (0/1) values, each dimension corresponding to a label</li>
+            </ul>
+        </td>
+        <td><b>seg</b>??</td>
+        <td><b>seg</b>??</td>
+        <td>
+            <ul>
+                <li><b>Labels</b> (array of strings). List of the labels represented in the masks. The first value in the list corresponds to either a gray level of 0 or to the 1st volume in the fourth dimension. E.g. <i>["Background", "SOL", "VM", "VL"]</i></li>
+                </li><b>Note</b>: the string representation of the labels must follow a standardized format. While it is possible that the same anatomical structure is represented by different labels (e.g. <i>SOL</i> or <i>Soleus</i>), the labels must be known. This allows flexibility in the implementation of segmentation tools, while keeping easy interoperability because all values are easily convertible. A list of standardized labels is visible <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4gioDvbO_6VItFglPEWeXP0U86tfG1yYifTU-XXqk5kdN1vln6KVP6bzDNPw-_L8xvkZ0soQeyW8-/pubhtml#">here</a>. Please contact <a href="mailto:francesco.santini@unibas.ch">Francesco Santini</a> if you would like to add your own definitions.
+                </li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
 
-<!--
-### Phase contrast
 
-* NIfTI structure: **4D (x,y,z,t) + multiple suffixes for venc direction**
-* Filename suffix: **pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3**
-* Folder: **flow** ??
-* The velocity information is stored as phase data scaled between -π and +π.
-* JSON required fields:
-    * **Venc** in cm/s
-    * **EncodingDirection** (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume. **TBD**: patient coordinate system or image coordinate system.
 
-### Diffusion
 
-* NIfTI structure: **4D (x,y,z,direction)**
-* Filename suffix: **diff**
-* Folder: **diff** ??
-* JSON required fields:
-    * **MixingTime** in ms
-    * **EncodingDirection** (array of 3D vectors). The norm of the vector is the **b-value**. The normalized vector indicates the **direction** of the diffusion gradient in patient coordinates.
 
-### Segmentation labels
-
-* NIfTI structure: 
-    * **3D (x,y,z)** with integer values, from 0 to N, each value corresponding to a different label
-    * **4D (x,y,z,label)** stack of binary (0/1) values, each dimension corresponding to a label
-* Filename suffix: **seg** ??
-* Folder: **seg** ??
-* JSON required fields:
-    * **Labels** (array of strings). List of the labels represented in the masks. The first value in the list corresponds to either a gray level of 0 or to the 1st volume in the fourth dimension. E.g. `["Background", "SOL", "VM", "VL"]`
-    * **Note**: the string representation of the labels must follow a standardized format. While it is possible that the same anatomical structure is represented by different labels (e.g. `SOL` or `Soleus`), the labels must be known. This allows flexibility in the implementation of segmentation tools, while keeping easy interoperability because all values are easily convertible. A list of standardized labels is visible [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vS4gioDvbO_6VItFglPEWeXP0U86tfG1yYifTU-XXqk5kdN1vln6KVP6bzDNPw-_L8xvkZ0soQeyW8-/pubhtml#). Please contact [Francesco Santini](mailto:francesco.santini@unibas.ch) if you would like to add your own definitions.
--->
