@@ -148,8 +148,7 @@ Where the `patient_folder` is the location of the root folder containing all the
         <td>
             <ul>
                 <li><b>Labels</b> (array of strings). List of the labels represented in the masks. The first value in the list corresponds to either a gray level of 0 or to the 1st volume in the fourth dimension. E.g. <i>["Background", "SOL", "VM", "VL"]</i></li>
-                </li><b>Note</b>: the string representation of the labels must follow a standardized format. While it is possible that the same anatomical structure is represented by different labels (e.g. <i>SOL</i> or <i>Soleus</i>), the labels must be known. This allows flexibility in the implementation of segmentation tools, while keeping easy interoperability because all values are easily convertible. A list of standardized labels is visible <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4gioDvbO_6VItFglPEWeXP0U86tfG1yYifTU-XXqk5kdN1vln6KVP6bzDNPw-_L8xvkZ0soQeyW8-/pubhtml#">here</a>. Please contact <a href="mailto:francesco.santini@unibas.ch">Francesco Santini</a> if you would like to add your own definitions.
-                </li>
+                <li><b>Note</b>: the string representation of the labels must follow a standardized format. While it is possible that the same anatomical structure is represented by different labels (e.g. <i>SOL</i> or <i>Soleus</i>), the labels must be known. This allows flexibility in the implementation of segmentation tools, while keeping easy interoperability because all values are easily convertible. A list of standardized labels is visible <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS4gioDvbO_6VItFglPEWeXP0U86tfG1yYifTU-XXqk5kdN1vln6KVP6bzDNPw-_L8xvkZ0soQeyW8-/pubhtml#">here</a>. Please contact <a href="mailto:francesco.santini@unibas.ch">Francesco Santini</a> if you would like to add your own definitions</li>
             </ul>
         </td>
     </tr>
