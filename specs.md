@@ -58,19 +58,19 @@ Where the `patient_folder` is the location of the root folder containing all the
         <td><b>ct</b></td>
         <td>
             <ul> 
-                <li><b>XRayEnergy</b> (array) in kVp</li>	
+                <li><b>XRayEnergy</b> in kVp</li>	
                 <li><b>XRayExposure</b> in mAs</li>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><b>Computed/plain radiography</b></td>
+        <td><b>Computed/ plain radiography</b></td>
         <td><b>2D (x,y)</b></td>
         <td><b>N/A</b></td>
         <td><b>cr</b></td>
         <td>
             <ul> 
-                <li><b>ExposureTime</b> (array) in ms</li>	
+                <li><b>ExposureTime</b> in ms</li>	
                 <li><b>X-RayTubeCurrent</b> in mA</li>
             </ul>
         </td>
@@ -137,9 +137,9 @@ Where the `patient_folder` is the location of the root folder containing all the
     </tr>
     <tr>
         <td><b>MRI: Phase contrast</b></td>
-        <td><b>4D (x,y,z,t) + multiple suffixes for venc direction</b></td>
+        <td><b>4D (x,y,z,t) + suffix per venc direction</b></td>
         <td><b>pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3</b></td>
-        <td><b>flow</b>?? The velocity information is stored as phase data scaled between -π and +π</td>
+        <td><b>mr-flow</b>?? The velocity information is stored as phase data scaled between -π and +π</td>
         <td>
             <ul> 
                 <li><b>Venc</b> in cm/s</li>	
@@ -148,10 +148,21 @@ Where the `patient_folder` is the location of the root folder containing all the
         </td>
     </tr>
     <tr>
+        <td><b>MRI: DESS</b></td>
+        <td><b>4D (x,y,z,echo)</b></td>
+        <td><b>dess</b></td>
+        <td><b>mr-anat</b></td>
+        <td>
+            <ul> 
+                <li><b>EchoTime</b> (array) in ms</li>	
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td><b>MRI: Diffusion</b></td>
         <td><b>4D (x,y,z,direction)</b></td>
         <td><b>diff</b></td>
-        <td><b>diff</b></td>
+        <td><b>mr-diff</b></td>
         <td>
             <ul> 
                 <li><b>MixingTime</b> in ms</li>	
@@ -163,7 +174,7 @@ Where the `patient_folder` is the location of the root folder containing all the
         <td><b>Segmentation labels</b></td>
         <td>
             <ul>
-                <li><b>3D (x,y,z)</b> with integer values, from 0 to N, each value corresponding to a different label</li>
+                <li><b>3D (x,y,z)</b> with integer values, 0---N, each corresponding to a different label</li>
                 <li><b>4D (x,y,z,label)</b> stack of binary (0/1) values, each dimension corresponding to a label</li>
             </ul>
         </td>
