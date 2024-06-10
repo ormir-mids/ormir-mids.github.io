@@ -3,30 +3,30 @@ title: ORMIR-MIDS
 subtitle: Bids
 layout: default
 ---
-# What ORMIR-MIDS is
-ORMIR-MIDS refers to two components:
+# What is ORMIR-MIDS?
+ORMIR-MIDS is a 'Medical Imaging Data Structure (MIDS)' developed by the 'Open and Reproducible Musculoskeletal Imaging Research (ORMIR)' community. It comprises two components:
 
-* A **standard specification** for the management of MR images of the human musculoskeletal system, and
+* A **standard specification** for the management of medical images and clinical data relating to the human musculoskeletal system, and
 * A **Python package** providing conversion and I/O functionalities for DICOM and ORMIR-MIDS data
 
 The aim of this standard is to provide a common interface for data postprocessing and analysis tools to read and write data in an interoperable way. The existing DICOM standard has very broad guidelines that result in a large variability among vendors of medical devices, to the point that it can hardly be considered a "standard" at all.
 
-The ORMIR-MIDS standard is inspired by the [neuroimaging BIDS specification](https://bids.neuroimaging.io/), and it is mostly compatible with it, in the sense that it aims to subdivide and group the acquired images based on their diagnostic role: e.g. anatomical images, quantitative maps, functional images, etc.
+The ORMIR-MIDS standard is inspired by the [neuroimaging BIDS specification](https://bids.neuroimaging.io/) and its [MIDS extension](https://arxiv.org/abs/2010.00434) to additional imaging modalities and anatomical regions. ORMIR-MIDS is mostly compatible with BIDS, in the sense that it is intended to subdivide and group the acquired images based on their source modality (e.g. magnetic resonance imaging, computed tomography, plain radiography) and diagnostic role (e.g. anatomical images, quantitative maps, functional images, etc.).
 
-The images are stored as three- or four-dimensional [NIfTI](https://nifti.nimh.nih.gov/) datasets paired with three plain-text [JSON](https://www.json.org/) headers each. These images are stored in a predefined directory and naming structure that allows immediate identification of the role of each dataset.
+Images are stored as three- or four-dimensional [NIfTI](https://nifti.nimh.nih.gov/) datasets paired with three plain-text [JSON](https://www.json.org/) headers each. These images are stored in a predefined directory and naming structure that allows immediate identification of the role of each dataset.
 
 As integration with medical and PACS systems is a prerequisites for our standard, bidirectional conversion between DICOM and ORMIR-MIDS is ensured.
 
 ORMIR-MIDS is a fork and extension of [muscle-BIDS](https://github.com/muscle-bids/muscle-bids).
 
 # The specification
-ORMIR-MIDS prescribes that all imaging data should be kept in a NIfTI format inside a predefined directory structure, with a specific file naming scheme. Associated to each NIfTI file, there are up to three JSON files containing:
+ORMIR-MIDS prescribes that all imaging data should be kept in a NIfTI format inside a predefined directory structure, with a specific file-naming scheme. Associated with each NIfTI file, there are up to three JSON files containing:
 
-1. The relevant parameters for that specific acquisition (e.g. echo times for multi echo spin echo).
-2. The patient information (which can be omitted for anonymization).
+1. The relevant parameters for that specific acquisition (e.g. 'XRayEnergy' for CT, multiple 'EchoTime' values for multi echo spin echo MRI).
+2. The patient/participant information (which can be omitted for anonymization).
 3. All extra headers needed for the conversion to DICOM (originating from the initial acquisition).
 
-Each acquisition type has a corresponding set of relevant parameters and a naming convention. The full specification is found [here](/specs).
+Each imaging modality and acquisition type has a corresponding set of relevant parameters and a naming convention. The full specification is found [here](/specs).
 
 # The Python package
 
