@@ -26,7 +26,9 @@ ORMIR-MIDS prescribes that all imaging data should be kept in a NIfTI format ins
 2. The patient/participant information (which can be omitted for anonymization).
 3. All extra headers needed for the conversion to DICOM (originating from the initial acquisition).
 
-Each imaging modality and acquisition type has a corresponding set of relevant parameters and a naming convention. The full specification is found [here](/specs).
+Each imaging modality and acquisition type has a corresponding set of relevant parameters and a naming convention. Further, unlike the original BIDS specification, ORMIR-MIDS also provides a structure for health-related data---including an 'ehr' directory per session, containing a table (.tsv) of clinical data and (optionally) the raw clinical data itself. 
+
+The full ORMIR-MIDS specification can be found [here](/specs).
 
 # The Python package
 
