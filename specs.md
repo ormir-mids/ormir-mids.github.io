@@ -21,18 +21,18 @@ Ideally, each tool will have a command-line interface with the following syntax:
 ```
 musculoskeletal_tool <patient_folder>
 ```
-Where the `patient_folder` is the location of the root folder containing all the acquired data for a patient, divided in subfolders according to the BIDS standard and as described below. The musculoskeletal tools will also output data in the correct format in the same folder structure.
+Where the `patient_folder` is the location of the root folder containing all the acquired data for a patient, divided into subfolders according to the MIDS extension of the BIDS standard, and as described below. The musculoskeletal tools will also output data in the correct format in the same folder structure. **NOTE: ** One important difference between ORMIR-MIDS and BIDS is that all MR-related outputs are prefixed by 'mr-' in ORMIR-MIDS (e.g. mr-anat, mr-quant, etc.). Please take this in to consideration when handling ORMIR-MIDS-derived data. 
 
 # General guidelines
 
-* Each ORMIR-MIDS dataset is composed of:
+* Each ORMIR-MIDS dataset comprises:
     1. One NIfTI file containing the image data. This file is named `<patient>_<acquisition_type>.nii.gz`
     2. One JSON header named `<patient>_<acquisition_type>.json` (subsequently simply termed **header**) containing the imaging parameters relevant to the specific acquisition type.
     3. One JSON header named `<patient>_<acquisition_type>_patient.json` containing the patient information. This file can be omitted for anonymization purposes.
     4. One JSON header named `<patient>_<acquisition_type>_extra.json` containing a dictionary of DICOM fields used to convert the data back to DICOM.
-* When it makes sense, 4D NIfTI datasets are used instead of multiple 3D files (for example, multi-echo data are stored as a fourth NIfTI dimension). The quantity that changes in the fourth dimension is identified by the parameter **`FourthDimension`** in the header. E.g. `"FourthDimension": "EchoTime"`. The value of the `FourthDimension` field must have a corresponding entry in the header, which is a list of values corresponding to each index along the fourth dimension. E.g. `"EchoTime": [3.9, 6.3]`.
-* Multislice 2D acquisitions are saved as a 3D NIfTI volume. To store the actual slice thickness, the **`AcquisitionVoxelSize`** parameter can be set in the header.
-* Signal component suffixes:
+* When it makes sense, 4D NIfTI datasets are used for imaging data instead of multiple 3D files (for example, multi-echo MRI data are stored as a fourth NIfTI dimension). The quantity that changes in the fourth dimension is identified by the parameter **`FourthDimension`** in the header. E.g. `"FourthDimension": "EchoTime"`. The value of the `FourthDimension` field must have a corresponding entry in the header, which is a list of values corresponding to each index along the fourth dimension. E.g. `"EchoTime": [3.9, 6.3]`.
+* Multislice 2D imaging acquisitions are saved as a 3D NIfTI volume. To store the actual slice thickness, the **`AcquisitionVoxelSize`** parameter can be set in the header.
+* Signal component suffixes for quantitative MRI:
     * Magnitude: No suffix
     * Phase (scaled -π/π): `_ph`
     * Real: `_real`
@@ -45,17 +45,41 @@ Where the `patient_folder` is the location of the root folder containing all the
 
 <table>
     <tr>
-        <th><b>MR sequence</b></th>
+        <th><b>Imaging method/sequence</b></th>
         <th><b>NIfTI structure</b></th>
         <th><b>Filename suffix</b></th>
         <th><b>Folder</b></th>
         <th><b>JSON required fields</b></th>
     </tr>
     <tr>
-        <td><b>Multi-echo gradient echo</b></td>
+        <td><b>Computed tomography</b></td>
+        <td><b>3D (x,y,z)</b></td>
+        <td><b>N/A</b></td>
+        <td><b>ct</b></td>
+        <td>
+            <ul> 
+                <li><b>XRayEnergy</b> (array) in kVp</li>	
+                <li><b>XRayExposure</b> in mAs</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Computed/plain radiography</b></td>
+        <td><b>2D (x,y)</b></td>
+        <td><b>N/A</b></td>
+        <td><b>cr</b></td>
+        <td>
+            <ul> 
+                <li><b>ExposureTime</b> (array) in ms</li>	
+                <li><b>X-RayTubeCurrent</b> in mA</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><b>MRI: Multi-echo gradient echo</b></td>
         <td><b>4D (x,y,z,echo)</b></td>
         <td><b>megre</b></td>
-        <td><b>anat</b></td>
+        <td><b>mr-anat</b></td>
         <td>
             <ul> 
                 <li><b>EchoTime</b> (array) in ms</li>	
@@ -67,10 +91,10 @@ Where the `patient_folder` is the location of the root folder containing all the
         </td>
     </tr>
     <tr>
-        <td><b>Multi-echo spin echo</b></td>
+        <td><b>MRI: Multi-echo spin echo</b></td>
         <td><b>4D (x,y,z,echo)</b></td>
         <td><b>mese</b></td>
-        <td><b>anat</b></td>
+        <td><b>mr-anat</b></td>
         <td>
             <ul> 
                 <li><b>EchoTime</b> (array) in ms</li>	
@@ -80,18 +104,18 @@ Where the `patient_folder` is the location of the root folder containing all the
         </td>
     </tr>
     <tr>
-        <td><b>T1w / T1w-FS / T2w / T2w-FS</b></td>
+        <td><b>MRI: T1w / T1w-FS / T2w / T2w-FS</b></td>
         <td><b>3D (x,y,z)</b></td>
         <td><b>t1w / t1w-fs / t2w / t2w-fs</b></td>
-        <td><b>anat</b></td>
+        <td><b>mr-anat</b></td>
         <td>
         </td>
     </tr>
     <tr>
-        <td><b>Quantitative T1 / T2 / wT2</b></td>
+        <td><b>MRI: Quantitative T1 / T2 / wT2</b></td>
         <td><b>3D (x,y,z)</b></td>
         <td><b>t1 / t2 / wt2</b></td>
-        <td><b>quant</b></td>
+        <td><b>mr-quant</b></td>
         <td>
         </td>
     </tr>
@@ -105,14 +129,14 @@ Where the `patient_folder` is the location of the root folder containing all the
 
 <table>
     <tr>
-        <th><b>MR sequence</b></th>
+        <th><b>Imaging method/sequence</b></th>
         <th><b>NIfTI structure</b></th>
         <th><b>Filename suffix</b></th>
         <th><b>Folder</b></th>
         <th><b>JSON required fields</b></th>
     </tr>
     <tr>
-        <td><b>Phase contrast</b></td>
+        <td><b>MRI: Phase contrast</b></td>
         <td><b>4D (x,y,z,t) + multiple suffixes for venc direction</b></td>
         <td><b>pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3</b></td>
         <td><b>flow</b>?? The velocity information is stored as phase data scaled between -π and +π</td>
@@ -124,7 +148,7 @@ Where the `patient_folder` is the location of the root folder containing all the
         </td>
     </tr>
     <tr>
-        <td><b>Diffusion</b></td>
+        <td><b>MRI: Diffusion</b></td>
         <td><b>4D (x,y,z,direction)</b></td>
         <td><b>diff</b></td>
         <td><b>diff</b></td>
