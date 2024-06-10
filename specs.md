@@ -99,7 +99,7 @@ Where the `patient_folder` is the location of the root folder containing all the
             <ul> 
                 <li><b>EchoTime</b> (array) in ms</li>	
                 <li><b>RefocusingFlipAngle</b> in degrees</li>
-                <li><i>[optional]</i> <b>ExcitationProfile</b> and <b>RefocusingProfile</b>(arrays) providing the slice profiles in degrees</li> 
+                <li><i>[optional]</i> <b>ExcitationProfile</b> and <b>RefocusingProfile</b> (arrays) providing the slice profiles in degrees</li> 
             </ul>
         </td>
     </tr>
