@@ -136,6 +136,18 @@ Where the `patient_folder` is the location of the root folder containing all the
         <th><b>JSON required fields</b></th>
     </tr>
     <tr>
+        <td><b>High-resolution peripheral quantitative computed tomography</b></td>
+        <td><b>3D (x,y,z)</b></td>
+        <td><b>N/A</b></td>
+        <td><b>hrpqct</b></td>
+        <td>
+            <ul> 
+                <li><b>XRayEnergy</b> in kVp</li>	
+                <li><b>XRayExposure</b> in mAs</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td><b>MRI: Phase contrast</b></td>
         <td><b>4D (x,y,z,t) + suffix per venc direction</b></td>
         <td><b>pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3</b></td>
@@ -143,7 +155,7 @@ Where the `patient_folder` is the location of the root folder containing all the
         <td>
             <ul> 
                 <li><b>Venc</b> in cm/s</li>	
-                <li><b>EncodingDirection</b> (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume <b>TBD</b>: patient coordinate system or image coordinate system</li> 
+                <li><b>EncodingDirection</b> (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume. <b>TBD</b>: patient coordinate system or image coordinate system</li> 
             </ul>
         </td>
     </tr>
