@@ -21,7 +21,7 @@ Ideally, each tool will have a command-line interface with the following syntax:
 ```
 musculoskeletal_tool <patient_folder>
 ```
-Where the `patient_folder` is the location of the root folder containing all the acquired data for a patient, divided into subfolders according to the MIDS extension of the BIDS standard, and as described below. The musculoskeletal tools will also output data in the correct format in the same folder structure. **NOTE: ** One important difference between ORMIR-MIDS and BIDS is that all MR-related outputs are prefixed by 'mr-' in ORMIR-MIDS (e.g. mr-anat, mr-quant, etc.). Please take this in to consideration when handling ORMIR-MIDS-derived data. 
+Where the `patient_folder` is the location of the root folder containing all the acquired data for a patient, divided into subfolders according to the MIDS extension of the BIDS standard, and as described below. The musculoskeletal tools will also output data in the correct format in the same folder structure. **NOTE: ** One important difference between ORMIR-MIDS and BIDS is that all MR-related outputs are prefixed by 'mr-' in ORMIR-MIDS (e.g. mr-anat, mr-quant, etc.). Please take this into consideration when handling ORMIR-MIDS-derived data. 
 
 # General guidelines
 
