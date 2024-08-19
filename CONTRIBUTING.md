@@ -62,10 +62,12 @@ In terminal:
 ---
 ## GitHub Actions
 The following is just an explanation on how GitHub Actions is implemented and used to create the website. It does not require any action from the contributors
+
 Learning material:
 - How GitHub CI/CD works: [this video](https://www.youtube.com/watch?v=mFFXuXjVgkU)
 - How to deploy a Jupyter Book using GitHub Actions: [this webpage](https://jupyterbook.org/en/stable/publish/gh-pages.html)
-Practically
+
+Practically:
 1. In the GitHub repository, go to `Settings` tab -> `Pages` on the left panel -> Under `Build and deployment`, `Source` -> Select `GitHub Action`
 2. In the GitHub repository, go to the `Code` file -> Press the button `Add file` and then `Create new file` -> In the file name prompt, if your filename is called `ci.yml`, write `.github/workflows/ci.yml`. In the file copy/paste the content from [this page](https://jupyterbook.org/en/stable/publish/gh-pages.html)
 3. Make sure that in the repo, there are the following files `.nojekyll`, `requirements.txt`, `_config.yml`, `_toc.yml`, the notebooks, and the figures (in a folder)
