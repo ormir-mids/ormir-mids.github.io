@@ -4,3 +4,12 @@ author: The ORMIR-MIDS working group of the ORMIR community
 
 build:
   output_dir: .
+
+
+# Add GitHub buttons to the book
+repository:
+  url: https://github.com/ormir-mids/ormir-mids.github.io  
+  branch: master  
+html:
+  use_issues_button: true
+  use_repository_button: true
