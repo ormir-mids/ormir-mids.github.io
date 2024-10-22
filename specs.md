@@ -161,8 +161,3 @@ In the following table, you will find the image data types that are currently im
 - Derived data, such as segmentation labels
 
 ---
-
-
-
-https://github.com/ormir-mids/ormir-mids.github.io/issues/new?title=Issue%20on%20page%20%2Fpackage.html&body=Your%20issue%20content%20here.
-https://github.com/ORMIRcommunity/ormir_index_guidelines/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here.
