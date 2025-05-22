@@ -70,16 +70,14 @@ The MSK tools should also **output data in the correct format** in the same fold
 
 ## Learn more about ORMIR-MIDS
 
-In this video, you will find a presentation about ORMIR-MIDS, followed by a hands-on tutorial on how to use it
-
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/MpF3J07TcG8" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
-
+In this video, you will find a presentation about ORMIR-MIDS, followed by a hands-on tutorial on how to use it.
 Find the slides on [Zenodo](www.doi.org/10.5281/zenodo.15488134) and the Jupyter Notebook on [GitHub](https://github.com/ormir-mids/ormir-mids/blob/main/jupyter/ormir-mids-dcm2omids.ipynb)
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+       <iframe src="https://www.youtube.com/embed/MpF3J07TcG8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+   </div>
+
+
 
 ---
 
