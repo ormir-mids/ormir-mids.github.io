@@ -2,6 +2,8 @@ title: ORMIR-MIDS
 description: Standardizing the organization of musculoskeletal imaging data
 author: The ORMIR-MIDS working group of the ORMIR community
 
+uses: actions/download-artifact@v4
+
 build:
   output_dir: .
 
@@ -14,4 +16,3 @@ html:
   use_issues_button: true
   use_repository_button: true
 
-uses: actions/download-artifact@v3
