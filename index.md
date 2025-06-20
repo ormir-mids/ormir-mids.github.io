@@ -65,7 +65,7 @@ msk_software_tool <patient_folder>
 where `patient_folder` is the *location of the root (or parent) folder* containing the acquired data, structured according to the ORMIR-MIDS standard specification
 
 The MSK tools should also **output data in the correct format** in the same folder structure
-<!-- 
+
 ---
 
 ## Learn more about ORMIR-MIDS
@@ -77,9 +77,6 @@ Find the slides on [Zenodo](www.doi.org/10.5281/zenodo.15488134) and the Jupyter
        <iframe src="https://www.youtube.com/embed/MpF3J07TcG8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
    </div> -->
 
-
-
----
 
 :::{admonition} Why the name ORMIR-MIDS? How did ORMIR-MIDS start?
 :class: hint
