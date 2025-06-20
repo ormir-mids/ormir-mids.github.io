@@ -156,8 +156,49 @@ In the following table, you will find the image data types that are currently im
   - 
 ```
 
-*Note*: We are also working on conversions for:
+---
+
+
+(current-future-work)=
+## Current and future work
+
+
+We are working on converters for:
 - More imaging modalities, such as HR-pQCT, MRI Phase contrast, MRI DESS, MRI Diffusion  
 - Derived data, such as segmentation labels
+
+
+Here are the specs of some imaging modalities we will support:
+
+**Phase contrast**
+
+* NIfTI structure: **4D (x,y,z,t) + multiple suffixes for venc direction**
+* Filename suffix: **pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3**
+* Folder: **flow** ??
+* The velocity information is stored as phase data scaled between -π and +π.
+* JSON required fields:
+    * **Venc** in cm/s
+    * **EncodingDirection** (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume. **TBD**: patient coordinate system or image coordinate system.
+
+**Diffusion**
+
+* NIfTI structure: **4D (x,y,z,direction)**
+* Filename suffix: **diff**
+* Folder: **diff** ??
+* JSON required fields:
+    * **MixingTime** in ms
+    * **EncodingDirection** (array of 3D vectors). The norm of the vector is the **b-value**. The normalized vector indicates the **direction** of the diffusion gradient in patient coordinates.
+
+**Segmentation labels**
+
+* NIfTI structure: 
+    * **3D (x,y,z)** with integer values, from 0 to N, each value corresponding to a different label
+    * **4D (x,y,z,label)** stack of binary (0/1) values, each dimension corresponding to a label
+* Filename suffix: **seg** ??
+* Folder: **seg** ??
+* JSON required fields:
+    * **Labels** (array of strings). List of the labels represented in the masks. The first value in the list corresponds to either a gray level of 0 or to the 1st volume in the fourth dimension. E.g. `["Background", "SOL", "VM", "VL"]`
+    * **Note**: the string representation of the labels must follow a standardized format. While it is possible that the same anatomical structure is represented by different labels (e.g. `SOL` or `Soleus`), the labels must be known. This allows flexibility in the implementation of segmentation tools, while keeping easy interoperability because all values are easily convertible. A list of standardized labels is visible [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vS4gioDvbO_6VItFglPEWeXP0U86tfG1yYifTU-XXqk5kdN1vln6KVP6bzDNPw-_L8xvkZ0soQeyW8-/pubhtml#). Please contact [Francesco Santini](mailto:francesco.santini@unibas.ch) if you would like to add your own definitions.
+
 
 ---
