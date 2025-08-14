@@ -1,5 +1,6 @@
 (tutorials)=
-# 1. Converting DICOMs to the ORMIR-MIDS structure
+# Tutorials
+### 1. Converting DICOMs to the ORMIR-MIDS structure
 
 The commandline script is called `dcm2omids.exe`. To view the commandline script help type
 ```commandline
