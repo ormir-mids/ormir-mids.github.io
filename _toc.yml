@@ -3,3 +3,4 @@ root: index
 chapters:
 - file: specs
 - file: package
+- file: tutorials
