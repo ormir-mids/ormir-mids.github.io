@@ -6,7 +6,7 @@ The ORMIR-MIDS specifications are a simple and intuitive way to organize MSK ima
 In this page, you will find:   
 {ref}`1. Structure and naming of folders and files<structure-naming>`  
 {ref}`2. Supported imaging modalities<supported-modalities>`  
-
+{ref}`3. Current and future work<current-future-work>`
 
 ---
 
