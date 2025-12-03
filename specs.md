@@ -98,21 +98,22 @@ Within each folder or subfolder, there are specific files:
 
 
 (supported-modalities)=
-## Supported imaging modalities
+## General JSON Fields
 
-
-In the following table, you will find the image data types that are currently implemented or under development in ORMIR-MIDS. The table columns specify:  
+The JSON fields in the following table are common to all acquisition types of a specific modality. Refer to the section below for specific acquisition types within a modality.
+The table columns specify:  
 - *Imaging method*: the image acquisition method, such as `computed tomography`, `MR imaging`, etc.
-- *Folder name*: name of the output folder containing the images (e.g., `mr-anat`, `ct`, etc.). See the {ref}`folder naming specifications <folder-structure>` for more details
+- *Folder names*: name of the output folder containing the images (e.g., `mr-anat`, `ct`, etc.). See the {ref}`folder naming specifications <folder-structure>` for more details
 - *File name suffix*: suffix of the file name of the image volume (e.g., `mese`, `megre`, etc.). See the {ref}`file naming specifications <file-naming>` for more details
 - *Image volume*: dimension (`2D`, `3D`, or `4D`) and directions (`x`, `y`, `z`, `echo`) of the obtained image volume (i.e., `nii.gz` files)
-- *JSON fields*: information that the dicom header must have to be able to transform the data into the ORMIR-MIDS structure
+- *JSON fields*: information that the dicom header must have to be able to transform the data into the ORMIR-MIDS structure. Fields in **bold** are mandatory. Units (if available) are in square brackets.
+
 
 ```{list-table}
 :header-rows: 1
 
 * - Imaging method
-  - Folder name
+  - Folder name(s)
   - File name suffix
   - Image volume
   - JSON fields
@@ -120,30 +121,38 @@ In the following table, you will find the image data types that are currently im
   - ct
   - N/A
   - 3D (x,y,z)
-  - XRayEnergy in kVp 
-    <br> XRayExposure in mAs
+  - **XRayEnergy** [kVp]
+    <br> **XRayExposure** [mAs]
 * - Computed / plain radiography
   - cr
   - N/A
   - 2D (x,y)
-  - ExposureTime in ms 
-    <br> X-RayTubeCurrent in mA
-* - MRI: Multi-echo gradient echo
-  - mr-anat
-  - megre
-  - 4D (x,y,z,echo)
-  - EchoTime (array) in ms 
-    <br> WaterFatShift in pixels 
-    <br> MagneticFieldStrength 
-    <br> *proposed:* ReadoutMode: Monopolar/Bipolar 
-    <br> *proposed:* PrecessionDirection: Counter-/Clockwise
-* - MRI: Multi-echo spin echo
-  - mr-anat
-  - mese
-  - 4D (x,y,z,echo)
-  - EchoTime (array) in ms <br>	
-    RefocusingFlipAngle in degrees<br>
-    *optional:* ExcitationProfile and RefocusingProfile (arrays) providing the slice profiles in degrees
+  - **ExposureTime** [ms]
+    <br> **X-RayTubeCurrent** [mA]
+* - MRI
+  - mr-anat/mr-quant
+  - [various]
+  - 3D, 4D, or 5D
+  - **EchoTime** [ms]<br/>
+  **RepetitionTime** [ms]<br/>
+  **FlipAngle** [degrees]<br/>
+  RefocusingFlipAngle [degrees]<br/>
+  InversionTime [ms]<br/>
+  ScanningSequence<br/>
+  SequenceVariant<br/>
+  ScanOptions<br/>
+  SequenceName<br/>
+  MRAcquisitionType<br/>
+  ParallelReductionFactorInPlane<br/>
+  ParallelAcquisitionTechnique<br/>
+  PartialFourier<br/>
+  PartialFourierDirection<br/>
+  PixelBandwidth [Hz/px]<br/>
+  Manufacturer<br/>
+  ImagingFrequency [MHz]<br/>
+  MagneticFieldStrength [T]<br/>
+  ImageType<br/>
+  PhaseEncodingDirection<br/>
 * - MRI: T1w / T1w-FS / T2w / T2w-FS
   - mr-anat
   - t1w / t1w-fs / t2w / t2w-fs
@@ -156,6 +165,21 @@ In the following table, you will find the image data types that are currently im
   - 
 ```
 
+
+---
+
+(acquisition-specs-section)=
+## Acquisition-specific specifications
+
+
+```{toctree}
+:glob:
+:titlesonly:
+
+specs/*
+```
+
+
 ---
 
 
@@ -164,21 +188,10 @@ In the following table, you will find the image data types that are currently im
 
 
 We are working on converters for:
-- More imaging modalities, such as HR-pQCT, MRI Phase contrast, MRI DESS, MRI Diffusion  
+- More imaging modalities, such as HR-pQCT, MRI Diffusion  
 - Derived data, such as segmentation labels
 
-
 Here are the specs of some imaging modalities we will support:
-
-**Phase contrast**
-
-* NIfTI structure: **4D (x,y,z,t) + multiple suffixes for venc direction**
-* Filename suffix: **pc_mag / pc_ph_1 / pc_ph_2 / pc_ph_3**
-* Folder: **flow** ??
-* The velocity information is stored as phase data scaled between -π and +π.
-* JSON required fields:
-    * **Venc** in cm/s
-    * **EncodingDirection** (3D vector) for each phase volume, indicating the direction of the positive velocity encoding for that volume. **TBD**: patient coordinate system or image coordinate system.
 
 **Diffusion**
 
@@ -193,7 +206,7 @@ Here are the specs of some imaging modalities we will support:
 
 * NIfTI structure: 
     * **3D (x,y,z)** with integer values, from 0 to N, each value corresponding to a different label
-    * **4D (x,y,z,label)** stack of binary (0/1) values, each dimension corresponding to a label
+    * **4D (x,y,z,label)** stack of binary (0/1) values, each dimension corresponding to a label (one-hot encoding)
 * Filename suffix: **seg** ??
 * Folder: **seg** ??
 * JSON required fields:
