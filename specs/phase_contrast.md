@@ -1,4 +1,4 @@
-# (MR) Flow quantification
+# (MR) Velocity quantification
 
 ```{list-table}
 :header-rows: 1
@@ -8,21 +8,21 @@
   - File name suffix
   - Image volume
   - JSON fields
-* - MRI: Phase Contrast
-  - MR Flow quantification
+* - MRI: Velocity quantification
   - mr-quant
+  - vel
   - 5D (x,y,z,t,direction)
   - FourthDimension: "TriggerTime"<br/>
   TriggerTime [array, ms]<br/>
-  FifthDimension: "FlowEncodingDirection"<br/>
-  FlowEncodingDirection [array, vectors]<br/>
+  FifthDimension: "VelocityEncodingDirection"<br/>
+  VelocityEncodingDirection [array, vectors]<br/>
   Venc [array, m/s]
 ```
 
 ## Notes
 1. The actual velocity in **m/s** is stored in the volume data. The range of the values is from *-Venc* to *+Venc* for every encoding direction.
 
-2. The FlowEncodingDirection field is an array of vectors that identify which velocity direction is encoded in the corresponding dimension of the volume. The following example corresponds to three directional encoding, the first of which is along the row direction (*x*), the second along the column direction (*y*), and the third along the slice direction (*z*):
+2. The VelocityEncodingDirection field is an array of vectors that identify which velocity direction is encoded in the corresponding dimension of the volume. The following example corresponds to three directional encoding, the first of which is along the row direction (*x*), the second along the column direction (*y*), and the third along the slice direction (*z*):
 ```
 [[1,0,0],[0,1,0],[0,0,1]]
 ```
