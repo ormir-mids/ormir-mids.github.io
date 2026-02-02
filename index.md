@@ -97,7 +97,7 @@ Both [ORMIR-MIDS](https://github.com/ormir-mids/ormir-mids) and [muscle-BIDS](ht
 
 Thank you for citing ORMIR-MIDS! Here is our publication:
 
-Santini F, Monzon M, Poncioni S, Bonaretti S, Hirvasniemi J, Froeling M, Cameron D. **ORMIR-MIDS: An open standard for curating and sharing musculoskeletal imaging data**. JBMR Plus 2026:ziag013. doi: [10.1093/jbmrpl/ziag013](www.doi.org/10.1093/jbmrpl/ziag013).
+Santini F, Monzon M, Poncioni S, Bonaretti S, Hirvasniemi J, Froeling M, Cameron D. **ORMIR-MIDS: An open standard for curating and sharing musculoskeletal imaging data**. JBMR Plus 2026:ziag013. doi: [10.1093/jbmrpl/ziag013](https://doi.org/10.1093/jbmrpl/ziag013).
 
 <!-- S. Bonaretti, M. A. Espinosa Hernandez, F. Chiumento, Y. Founas, M. Froeling, J. Hirvasniemi, G. Iori, Y. Lee, S. Matuschik, M. Monzon, F. Santini, D. Cameron. ***ORMIR-MIDS: An open standard for curating and sharing musculoskeletal imaging data***. 24{sup}`th` International Workshop on Quantitative Musculoskeletal Imaging (QMSKI). The Barossa Valley, South Australia. November 3-8, 2024.  -->
 
