@@ -11,14 +11,14 @@
 * - MRI: Strain Eigenvalues
   - mr-quant
   - strain
-  - 5D (x,y,z,t,eigenvalue_number)
+  - 5D (x,y,z,t,ev_order)
   - FourthDimension: "TriggerTime"<br/>
   TriggerTime [array, ms]<br/>
   FifthDimension: "EigenOrder"
 * - MRI: Strain Eigenvectors
   - mr-quant
   - strain-vec
-  - 6D (x,y,z,t,eigenvector_number,vector_component)
+  - 6D (x,y,z,t,ev_order,vector_component)
   - FourthDimension: "TriggerTime"<br/>
   TriggerTime [array, ms]<br/>
   FifthDimension: "EigenOrder"<br/>
@@ -26,14 +26,14 @@
 * - MRI: Strain Rate Eigenvalues
   - mr-quant
   - strain-rate
-  - 5D (x,y,z,t,eigenvalue_number)
+  - 5D (x,y,z,t,ev_order)
   - FourthDimension: "TriggerTime"<br/>
   TriggerTime [array, ms]<br/>
   FifthDimension: "EigenOrder"
 * - MRI: Strain Rate Eigenvectors
   - mr-quant
   - strain-rate-vec
-  - 6D (x,y,z,t,eigenvector_number,vector_component)
+  - 6D (x,y,z,t,ev_order,vector_component)
   - FourthDimension: "TriggerTime"<br/>
   TriggerTime [array, ms]<br/>
   FifthDimension: "EigenOrder"<br/>
@@ -41,7 +41,7 @@
 ```
 
 ## Notes
-1. The EigenOrder corresponds to the following:
+1. The EigenOrder (indicated as `ev_order` in the dimensions description above) corresponds to the following:
    - First Eigenvalue/Eigenvector: Largest positive Eigenvalue.
    - Second Eigenvalue/Eigenvector: Largest negative Eigenvalue.
    - Third Eigenvalue/Eigenvector: Remaining Eigenvalue.
