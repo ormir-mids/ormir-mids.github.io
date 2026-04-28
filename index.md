@@ -37,8 +37,8 @@ Inspired by the Brain Imaging Data Structure ([BIDS](https://bids.neuroimaging.i
 ORMIR-MIDS includes two aspects:
 
 
-::::{grid}
-:gutter: 2
+::::{grid} 1 1 2 2 
+<!-- 1 1 2 2:  N. of CSS columns used on small, medium, large, and extra-large screens -->
 
 :::{grid-item-card} ✏️ {ref}`A Standard Specification <specs>`
 How to organize MSK medical images and corresponding clinical information
@@ -66,16 +66,24 @@ where `patient_folder` is the *location of the root (or parent) folder* containi
 
 The MSK tools should also **output data in the correct format** in the same folder structure
 
+
 ---
 
 ## Learn more about ORMIR-MIDS
 
 In the video below, you will find a presentation about ORMIR-MIDS, followed by a hands-on tutorial. The slides shown in the video are on [Zenodo](www.doi.org/10.5281/zenodo.15488134) and the Jupyter Notebook on [GitHub](https://github.com/ormir-mids/ormir-mids/blob/main/jupyter/ormir-mids-dcm2omids.ipynb)
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-       <iframe src="https://www.youtube.com/embed/MpF3J07TcG8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-   </div> 
+<!-- <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+       <iframe src="https://www.youtube.com/embed/MpF3J07TcG8" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%"></iframe>
+   </div>  -->
 
+:::{iframe} https://www.youtube.com/embed/MpF3J07TcG8
+:width: 100%
+:::
+<br>
+<br>
+
+--- 
 
 :::{admonition} Why the name ORMIR-MIDS? How did ORMIR-MIDS start?
 :class: hint
@@ -99,7 +107,6 @@ Thank you for citing ORMIR-MIDS! Here is our publication:
 
 Santini F, Monzon M, Poncioni S, Bonaretti S, Hirvasniemi J, Froeling M, Cameron D. **ORMIR-MIDS: An open standard for curating and sharing musculoskeletal imaging data**. JBMR Plus 2026:ziag013. doi: [10.1093/jbmrpl/ziag013](https://doi.org/10.1093/jbmrpl/ziag013).
 
-<!-- S. Bonaretti, M. A. Espinosa Hernandez, F. Chiumento, Y. Founas, M. Froeling, J. Hirvasniemi, G. Iori, Y. Lee, S. Matuschik, M. Monzon, F. Santini, D. Cameron. ***ORMIR-MIDS: An open standard for curating and sharing musculoskeletal imaging data***. 24{sup}`th` International Workshop on Quantitative Musculoskeletal Imaging (QMSKI). The Barossa Valley, South Australia. November 3-8, 2024.  -->
 
 :::
 

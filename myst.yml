@@ -1,0 +1,22 @@
+version: 1
+project:
+  title: ORMIR-MIDS
+  github: ormir-mids/ormir-mids.github.io
+  toc:
+    - file: index.md
+    - file: specs.md
+      children:
+      - file: specs/dess.md
+      - file: specs/megre.md
+      - file: specs/mese.md
+      - file: specs/phase_contrast.md
+      - file: specs/strain.md
+    - file: package.md
+    - file: tutorials.md
+    - file: new_spec.md
+site:
+  options:
+    logo: figures/logo.png
+    favicon: figures/favicon.ico
+    folders: true
+  template: book-theme
