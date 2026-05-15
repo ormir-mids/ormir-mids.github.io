@@ -20,3 +20,5 @@ site:
     favicon: figures/favicon.ico
     folders: true
   template: book-theme
+  parts:
+    primary_sidebar_footer: primary-sidebar-footer.md

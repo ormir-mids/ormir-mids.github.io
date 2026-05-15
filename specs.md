@@ -4,9 +4,10 @@
 The ORMIR-MIDS specifications are a simple and intuitive way to organize MSK imaging data. They are an extension of the specifications of the Brain Imaging Data Structure ([BIDS](https://bids.neuroimaging.io/index.html)) and the Medical Imaging Data Structure ([MIDS](https://arxiv.org/abs/2010.00434))
 
 In this page, you will find:   
-{ref}`1. Structure and naming of folders and files<structure-naming>`  
-{ref}`2. Supported imaging modalities<supported-modalities>`  
-{ref}`3. Current and future work<current-future-work>`
+- {ref}`Structure and naming of folders and files<structure-naming>`  
+- {ref}`General JSON fields<supported-modalities>`  
+- {ref}`Acquisition-specific specifications<acquisition-specs-section>`  
+- {ref}`Current and future work<current-future-work>`
 
 ---
 
@@ -98,7 +99,7 @@ Within each folder or subfolder, there are specific files:
 
 
 (supported-modalities)=
-## General JSON Fields
+## General JSON fields
 
 The JSON fields in the following table are common to all acquisition types of a specific modality. Refer to the section below for specific acquisition types within a modality.
 The table columns specify:  
@@ -171,13 +172,12 @@ The table columns specify:
 (acquisition-specs-section)=
 ## Acquisition-specific specifications
 
-
-```{toctree}
-:glob:
-:titlesonly:
-
-specs/*
-```
+See: 
+- [(MR) Double-echo Steady State (DESS)](dess.md)
+- [(MR) Multi-echo gradient echo](megre.md)
+- [(MR) Multi-echo spin echo](mese.md)
+- [(MR) Velocity quantification (Draft)](phase_contrast.md)
+- [(MR) MR Strain mapping (Draft)](strain.md)
 
 
 ---

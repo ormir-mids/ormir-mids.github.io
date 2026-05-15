@@ -3,9 +3,13 @@
 
 ORMIR-MIDS is meant to be a standard that adapts with the necessities of the community. The specifications for nonstandard or more complex acquisition types are collected in separate files in the `specs` directory of the [website repository](https://github.com/ormir-mids/ormir-mids.github.io).
 
+---
+
 ## Why contribute?
 
 As ORMIR, we decided not to be prescriptive and try to cover all possible use cases of ORMIR-MIDS, but rather focus on the modalities and acquisition types that we, as members, use. If your particular MR sequence or imaging modality is not covered, it's the perfect occasion for you to propose new guidelines!
+
+---
 
 ## Writing your own specification file
 
@@ -32,6 +36,8 @@ If you would like to propose a specification for a new modality, clone the repos
 This creates a file with a title, and a standardized table that provides the required information.
 
 Add any advanced instructions after the table.
+
+---
 
 ## Creating a pull request
 
