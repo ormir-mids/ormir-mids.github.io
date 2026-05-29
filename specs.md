@@ -120,10 +120,29 @@ The table columns specify:
   - JSON fields
 * - Computed tomography
   - ct
-  - N/A
+  - ct/pcct
   - 3D (x,y,z)
   - **XRayEnergy** [kVp]
     <br> **XRayExposure** [mAs]
+* - Computed tomography
+  - ct
+  - cbct
+  - 3D (x,y,z)
+  - **XRayEnergy** [kVp]
+* - Computed tomography
+  - ct
+  - hrpqct
+  - 3D (x,y,z)
+  - **XRayEnergy** [kVp]
+    <br> **XRayExposure** [μAs]
+    <br> **XRayExposureTime** [ms]
+    <br> **ConvolutionKernel**
+    <br> **RescaleIntercept**
+    <br> **RescaleSlope**
+    <br> **ScancoMuScaling**
+    <br> **ScancoDensitySlope**
+    <br> **ScancoDensityIntercept**
+    <br> **ScancoMuWater**
 * - Computed / plain radiography
   - cr
   - N/A
