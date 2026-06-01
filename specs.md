@@ -143,9 +143,9 @@ The table columns specify:
     <br> **ScancoDensitySlope**
     <br> **ScancoDensityIntercept**
     <br> **ScancoMuWater**
-* - Computed / plain radiography
+* - Plain radiography
+  - rx
   - cr
-  - N/A
   - 2D (x,y)
   - **ExposureTime** [ms]
     <br> **X-RayTubeCurrent** [mA]
