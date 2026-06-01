@@ -192,11 +192,11 @@ The table columns specify:
 ## Acquisition-specific specifications
 
 See: 
-- [(MR) Double-echo Steady State (DESS)](dess.md)
-- [(MR) Multi-echo gradient echo](megre.md)
-- [(MR) Multi-echo spin echo](mese.md)
-- [(MR) Velocity quantification (Draft)](phase_contrast.md)
-- [(MR) MR Strain mapping (Draft)](strain.md)
+- [(MR) Double-echo Steady State (DESS)](specs/dess.md)
+- [(MR) Multi-echo gradient echo](specs/megre.md)
+- [(MR) Multi-echo spin echo](specs/mese.md)
+- [(MR) Velocity quantification (Draft)](specs/phase_contrast.md)
+- [(MR) MR Strain mapping (Draft)](specs/strain.md)
 
 
 ---
