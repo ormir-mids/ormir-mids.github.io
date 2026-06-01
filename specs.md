@@ -118,18 +118,18 @@ The table columns specify:
   - File name suffix
   - Image volume
   - JSON fields
-* - Computed tomography
+* - Computed tomography: <br> CT and PCCT
   - ct
   - ct/pcct
   - 3D (x,y,z)
   - **XRayEnergy** [kVp]
     <br> **XRayExposure** [mAs]
-* - Computed tomography
+* - Computed tomography: CBCT
   - ct
   - cbct
   - 3D (x,y,z)
   - **XRayEnergy** [kVp]
-* - Computed tomography
+* - Computed tomography: HR-pQCT
   - ct
   - hrpqct
   - 3D (x,y,z)
